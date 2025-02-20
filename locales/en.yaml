@@ -1,0 +1,19 @@
+- id: application_welcome
+  translation: "Write commit message with AI"
+- id: config_command_usage
+  translation: "Manage your configuration"
+- id: config_get_command_usage
+  translation: "Get configuration"
+- id: config_set_command_usage
+  translation: "Set configuration"
+
+- id: unknown_configuration_section
+  translation: "unknown configuration section: %s"
+- id: cannot_set_configuration_key
+  translation: "cannot set configuration key: %s"
+- id: invalid_value_for
+  translation: "invalid value for %s: %s"
+- id: unsupported_configuration_key_type
+  translation: "unsupported configuration key type: %s"
+- id: cannot_set_nested_configuration_key
+  translation: "cannot set nested configuration key: %s"

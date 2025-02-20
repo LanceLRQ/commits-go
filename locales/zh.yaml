@@ -1,0 +1,19 @@
+- id: application_welcome
+  translation: "让AI帮你写commit message"
+- id: config_command_usage
+  translation: "管理配置"
+- id: config_get_command_usage
+  translation: "获取配置"
+- id: config_set_command_usage
+  translation: "设置配置"
+
+- id: unknown_configuration_section
+  translation: "未知的配置项: %s"
+- id: cannot_set_configuration_key
+  translation: "不能设置配置项: %s"
+- id: invalid_value_for
+  translation: "无效的配置值: %s"
+- id: unsupported_configuration_key_type
+  translation: "不支持的配置项类型: %s"
+- id: cannot_set_nested_configuration_key
+  translation: "不能设置嵌套的配置项: %s"
