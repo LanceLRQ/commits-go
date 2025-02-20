@@ -6,6 +6,8 @@
   translation: "Get configuration"
 - id: config_set_command_usage
   translation: "Set configuration"
+- id: wrong_arguments
+  translation: "Wrong arguments"
 
 - id: unknown_configuration_section
   translation: "unknown configuration section: %s"

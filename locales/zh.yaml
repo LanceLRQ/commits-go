@@ -6,6 +6,8 @@
   translation: "获取配置"
 - id: config_set_command_usage
   translation: "设置配置"
+- id: wrong_arguments
+  translation: "参数错误"
 
 - id: unknown_configuration_section
   translation: "未知的配置项: %s"

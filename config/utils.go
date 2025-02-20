@@ -2,10 +2,14 @@ package config
 
 import (
 	"fmt"
+	"os"
+	"path/filepath"
 	"reflect"
 	"strconv"
 	"strings"
 	"unicode"
+
+	"gopkg.in/yaml.v3"
 
 	"github.com/LanceLRQ/commits-go/utils"
 )
@@ -64,6 +68,7 @@ func camelToSnake(s string) string {
 	return string(result)
 }
 
+// SetConfigValue 设置配置值
 func SetConfigValue(cfg interface{}, key, value string) error {
 	keys := strings.Split(key, ".")
 	if len(keys) == 0 {
@@ -121,4 +126,48 @@ func SetConfigValue(cfg interface{}, key, value string) error {
 	}
 
 	return SetConfigValue(field.Addr().Interface(), strings.Join(keys[1:], "."), value)
+}
+
+// GetConfigPath 获取配置文件路径
+func getConfigPath() string {
+	home, _ := os.UserHomeDir()
+	return filepath.Join(home, ".commits-go")
+}
+
+// ReadConfig 读取配置
+func ReadConfig() (*Config, error) {
+	path := getConfigPath()
+	data, err := os.ReadFile(path)
+	cfg := GetDefaultConfig()
+	if os.IsNotExist(err) {
+		return &cfg, nil
+	} else if err != nil {
+		return nil, err
+	}
+
+	err = yaml.Unmarshal(data, &cfg)
+	return &cfg, err
+}
+
+// WriteConfig 写入配置
+func WriteConfig(config *Config) error {
+	// 先进行校验
+	// if err := config.Validate(); err != nil {
+	// 	return err
+	// }
+
+	// 获取配置文件路径
+	path := getConfigPath()
+	data, err := yaml.Marshal(config)
+	if err != nil {
+		return err
+	}
+
+	// 确保目录存在
+	dir := filepath.Dir(path)
+	if err := os.MkdirAll(dir, 0755); err != nil {
+		return err
+	}
+
+	return os.WriteFile(path, data, 0644)
 }
