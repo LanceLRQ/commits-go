@@ -5,7 +5,7 @@ import (
 	"os"
 
 	"github.com/LanceLRQ/commits-go/config"
-	"github.com/LanceLRQ/commits-go/core"
+	"github.com/LanceLRQ/commits-go/core/commits"
 	"github.com/LanceLRQ/commits-go/utils"
 	"github.com/urfave/cli/v2"
 )
@@ -18,12 +18,12 @@ func CmmandEntry() {
 			ConfigCommand(),
 		},
 		Action: func(c *cli.Context) error {
-			_, err := config.ReadConfig()
+			cfg, err := config.ReadConfig()
 			if err != nil {
 				return err
 			}
 
-			return core.AICommit(c, cfg)
+			return commits.AICommit(c, cfg)
 		},
 	}
 

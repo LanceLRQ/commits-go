@@ -1,4 +1,4 @@
-package core
+package commits
 
 import (
 	"github.com/LanceLRQ/commits-go/config"
@@ -6,5 +6,6 @@ import (
 )
 
 func AICommit(ctx *cli.Context, cfg *config.Config) error {
+	TemporaryEntry()
 	return nil
 }

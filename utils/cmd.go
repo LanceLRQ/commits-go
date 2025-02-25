@@ -1,10 +1,10 @@
-package core
+package utils
 
 import (
 	"os/exec"
 )
 
-func execCommand(Program string, args ...string) (string, error) {
+func ExecCommand(Program string, args ...string) (string, error) {
 	cmd := exec.Command(Program, args...)
 	output, err := cmd.Output()
 	if err != nil {
