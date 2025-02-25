@@ -57,10 +57,15 @@ func getGitStatus() ([]GitFileStatus, bool, error) {
 		return nil, false, err
 	}
 
-	statusText := strings.Split(strings.TrimSpace(statusTextRaw), "\n")
+	statusTextRaw = strings.TrimSpace(statusTextRaw)
+	if statusTextRaw == "" {
+		return nil, false, nil
+	}
 
 	gitFileResult := []GitFileStatus{}
 	hasUnstagedChanges := false
+
+	statusText := strings.Split(strings.TrimSpace(statusTextRaw), "\n")
 
 	for _, status := range statusText {
 		split := strings.Fields(status)
