@@ -19,3 +19,6 @@
   translation: "不支持的配置项类型: %s"
 - id: cannot_set_nested_configuration_key
   translation: "不能设置嵌套的配置项: %s"
+
+- id: not_a_git_repository
+  translation: "当前目录不是git仓库"

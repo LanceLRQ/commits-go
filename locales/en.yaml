@@ -10,12 +10,15 @@
   translation: "Wrong arguments"
 
 - id: unknown_configuration_section
-  translation: "unknown configuration section: %s"
+  translation: "Unknown configuration section: %s"
 - id: cannot_set_configuration_key
-  translation: "cannot set configuration key: %s"
+  translation: "Cannot set configuration key: %s"
 - id: invalid_value_for
-  translation: "invalid value for %s: %s"
+  translation: "Invalid value for %s: %s"
 - id: unsupported_configuration_key_type
-  translation: "unsupported configuration key type: %s"
+  translation: "Unsupported configuration key type: %s"
 - id: cannot_set_nested_configuration_key
-  translation: "cannot set nested configuration key: %s"
+  translation: "Cannot set nested configuration key: %s"
+
+- id: not_a_git_repository
+  translation: "Current directory is not a git repository"
