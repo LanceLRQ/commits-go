@@ -20,6 +20,22 @@ type GitChangeStatus struct {
 	hasUntrackedFiles  bool
 }
 
+func (i GitFileStatus) FilterValue() string {
+	if i.TargetPath != "" {
+		return i.TargetPath
+	}
+	return i.Path
+}
+func (i GitFileStatus) Title() string {
+	if i.TargetPath != "" {
+		return i.TargetPath
+	}
+	return i.Path
+}
+func (i GitFileStatus) Description() string {
+	return "test"
+}
+
 func getGitRepo() (string, error) {
 	repoDir, err := utils.ExecCommand("git", "rev-parse", "--show-toplevel")
 	if err != nil {
