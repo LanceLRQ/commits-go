@@ -1,5 +1,8 @@
 - id: application_welcome
   translation: "Write commit message with AI"
+- id: git_repository_directory
+  translation: "Git repository directory"
+
 - id: config_command_usage
   translation: "Manage your configuration"
 - id: config_get_command_usage
@@ -20,5 +23,33 @@
 - id: cannot_set_nested_configuration_key
   translation: "Cannot set nested configuration key: %s"
 
+- id: directory_not_found
+  translation: "Directory (%s) not found"
 - id: not_a_git_repository
-  translation: "Current directory is not a git repository"
+  translation: "%s is not a git repository"
+
+- id: git_file_status_m
+  translation: "Modified"
+- id: git_file_status_a
+  translation: "Added"
+- id: git_file_status_d
+  translation: "Deleted"
+- id: git_file_status_r
+  translation: "Renamed"
+- id: git_file_status_c
+  translation: "Copied"
+- id: git_file_status_u
+  translation: "Unmerged"
+- id: git_file_status_!
+  translation: "Ignored"
+- id: git_file_status_?
+  translation: "Untracked"
+
+- id: view_git_files_status
+  translation: |
+    # Git Status 
+
+    | Staged | Unstaged | File |
+    | --- | --- | --- |
+    {{.FileStatus}}
+  

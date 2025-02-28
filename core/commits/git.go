@@ -23,9 +23,8 @@ type GitChangeStatus struct {
 func getGitRepo() (string, error) {
 	repoDir, err := utils.ExecCommand("git", "rev-parse", "--show-toplevel")
 	if err != nil {
-		return "", utils.TranslateErrorF("not_a_git_repository")
+		return "", err
 	}
-
 	return repoDir, nil
 }
 

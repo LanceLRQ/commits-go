@@ -7,5 +7,5 @@ import (
 
 func main() {
 	utils.InitI18n()
-	cmd.CmmandEntry()
+	cmd.CommandEntry()
 }

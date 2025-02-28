@@ -10,19 +10,26 @@ import (
 	"github.com/urfave/cli/v2"
 )
 
-func CmmandEntry() {
+func CommandEntry() {
 	app := &cli.App{
 		Name:  "commits-go",
 		Usage: utils.Translate("application_welcome"),
 		Commands: []*cli.Command{
 			ConfigCommand(),
 		},
+		Flags: []cli.Flag{
+			&cli.StringFlag{
+				Name:    "workdir",
+				Aliases: []string{"d"},
+				Value:   "",
+				Usage:   utils.Translate("git_repository_directory"),
+			},
+		},
 		Action: func(c *cli.Context) error {
 			cfg, err := config.ReadConfig()
 			if err != nil {
 				return err
 			}
-
 			return commits.AICommit(c, cfg)
 		},
 	}

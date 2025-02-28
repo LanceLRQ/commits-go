@@ -56,6 +56,15 @@ func Translate(key string, args ...interface{}) string {
 	return translated
 }
 
+func TranslateF(key string, template interface{}) string {
+	translated := localizer.MustLocalize(&i18n.LocalizeConfig{
+		MessageID:    key,
+		TemplateData: template,
+	})
+
+	return translated
+}
+
 func TranslateErrorF(key string, args ...interface{}) error {
 	return errors.New(Translate(key, args...))
 }

@@ -1,5 +1,8 @@
 - id: application_welcome
   translation: "让AI帮你写commit message"
+- id: git_repository_directory
+  translation: "Git仓库目录"
+
 - id: config_command_usage
   translation: "管理配置"
 - id: config_get_command_usage
@@ -21,4 +24,30 @@
   translation: "不能设置嵌套的配置项: %s"
 
 - id: not_a_git_repository
-  translation: "当前目录不是git仓库"
+  translation: "%s 不是有效的Git仓库"
+- id: directory_not_found
+  translation: "Git仓库目录(%s)不存在"
+
+- id: git_file_status_m
+  translation: "修改"
+- id: git_file_status_a
+  translation: "新增"
+- id: git_file_status_d
+  translation: "删除"
+- id: git_file_status_r
+  translation: "重命名"
+- id: git_file_status_c
+  translation: "复制"
+- id: git_file_status_u
+  translation: "更新但未合并"
+- id: git_file_status_!
+  translation: "忽略"
+- id: git_file_status_?
+  translation: "未跟踪"
+
+- id: view_git_files_status
+  translation: |
+    # GIT仓库状态
+    | 暂存区 | 工作区 | 文件 |
+    | --- | --- | --- |
+    {{.FileStatus}}
